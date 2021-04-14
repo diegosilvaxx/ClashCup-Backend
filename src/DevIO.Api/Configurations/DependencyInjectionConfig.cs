@@ -25,17 +25,18 @@ namespace DevIO.Api.Configurations
             #endregion
 
             #region SERVICES
-            services.AddScoped<IClienteService, ClienteService>();
-            services.AddScoped<IFornecedorService, FornecedorService>();
-            services.AddScoped<IProdutoService, ProdutoService>();
+            services.AddScoped<IJogadorService, JogadorService>();
+            services.AddScoped<IPagamentoService, PagamentoService>();
+            services.AddScoped<ITorneioService, TorneioService>();
+            services.AddScoped<IRankingService, RankingService>();
             #endregion
 
             #region REPOSITORIES
-            services.AddScoped<IClienteRepository, ClienteRepository>();
-            services.AddScoped<IFornecedorRepository, FornecedorRepository>();
-            services.AddScoped<IProdutoRepository, ProdutoRepository>();
-            services.AddScoped<IEnderecoFornecedorRepository, EnderecoFornecedorRepository>();
-            services.AddScoped<IEnderecoClienteRepository, EnderecoClienteRepository>();
+            services.AddScoped<IJogadorRepository, JogadorRepository>();
+            services.AddScoped<IPagamentoRepository, PagamentoRepository>();
+            services.AddScoped<ITorneioRepository, TorneioRepository>();
+            services.AddScoped<IRankingRepository, RankingRepository>();
+
             #endregion
 
             #region OTHERS

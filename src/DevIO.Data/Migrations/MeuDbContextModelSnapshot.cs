@@ -3,7 +3,6 @@ using System;
 using DevIO.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DevIO.Data.Migrations
@@ -15,254 +14,147 @@ namespace DevIO.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.8")
-                .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("Relational:MaxIdentifierLength", 64)
+                .HasAnnotation("ProductVersion", "5.0.5");
 
-            modelBuilder.Entity("DevIO.Business.Models.Cliente", b =>
+            modelBuilder.Entity("DevIO.Business.Models.Jogador", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("CNPJ")
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<string>("CPF")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("Celular")
                         .HasColumnType("varchar(100)");
 
-                    b.Property<string>("ClienteAtivo")
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<DateTime>("DataNascimento")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Email")
                         .HasColumnType("varchar(100)");
 
-                    b.Property<string>("InscricaoEstadual")
+                    b.Property<string>("IdClash")
                         .HasColumnType("varchar(100)");
 
                     b.Property<string>("Nome")
-                        .IsRequired()
                         .HasColumnType("varchar(100)");
 
-                    b.Property<string>("Observacao")
-                        .HasColumnType("varchar(100)");
+                    b.Property<Guid>("PagamentoId")
+                        .HasColumnType("char(36)");
 
-                    b.Property<string>("RG")
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<string>("Sobrenome")
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<string>("Telefone")
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<string>("TipoCliente")
+                    b.Property<string>("UserId")
                         .HasColumnType("varchar(100)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Clientes");
+                    b.ToTable("Jogadores");
                 });
 
-            modelBuilder.Entity("DevIO.Business.Models.EnderecoCliente", b =>
+            modelBuilder.Entity("DevIO.Business.Models.Pagamento", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Bairro")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<string>("Cep")
-                        .IsRequired()
-                        .HasColumnType("varchar(9)");
-
-                    b.Property<string>("Cidade")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<Guid>("ClienteId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Complemento")
-                        .HasColumnType("varchar(250)");
-
-                    b.Property<string>("Estado")
-                        .IsRequired()
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Logradouro")
-                        .IsRequired()
-                        .HasColumnType("varchar(200)");
-
-                    b.Property<string>("Numero")
-                        .IsRequired()
-                        .HasColumnType("varchar(50)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ClienteId")
-                        .IsUnique();
-
-                    b.ToTable("EnderecoClientes");
-                });
-
-            modelBuilder.Entity("DevIO.Business.Models.EnderecoFornecedor", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Bairro")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<string>("Cep")
-                        .IsRequired()
-                        .HasColumnType("varchar(9)");
-
-                    b.Property<string>("Cidade")
-                        .IsRequired()
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<string>("Complemento")
-                        .HasColumnType("varchar(250)");
-
-                    b.Property<string>("Estado")
-                        .IsRequired()
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<Guid>("FornecedorId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Logradouro")
-                        .IsRequired()
-                        .HasColumnType("varchar(200)");
-
-                    b.Property<string>("Numero")
-                        .IsRequired()
-                        .HasColumnType("varchar(50)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("FornecedorId")
-                        .IsUnique();
-
-                    b.ToTable("EnderecoFornecedores");
-                });
-
-            modelBuilder.Entity("DevIO.Business.Models.Fornecedor", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("CNPJ")
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<string>("Celular")
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("Email")
                         .HasColumnType("varchar(100)");
 
-                    b.Property<string>("FornecedorAtivo")
+                    b.Property<string>("FormaPagamento")
                         .HasColumnType("varchar(100)");
 
-                    b.Property<string>("InscricaoEstadual")
+                    b.Property<string>("IdClash")
                         .HasColumnType("varchar(100)");
 
-                    b.Property<string>("NomeAtendente")
+                    b.Property<Guid>("JogadorId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("Status")
                         .HasColumnType("varchar(100)");
 
-                    b.Property<string>("NomeFantasia")
-                        .IsRequired()
-                        .HasColumnType("varchar(200)");
-
-                    b.Property<string>("Observacao")
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<string>("RazaoSocial")
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<string>("Telefone")
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<string>("TipoFornecedor")
-                        .HasColumnType("varchar(100)");
+                    b.Property<Guid>("TorneioId")
+                        .HasColumnType("char(36)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Fornecedores");
+                    b.HasIndex("JogadorId");
+
+                    b.HasIndex("TorneioId");
+
+                    b.ToTable("Pagamentos");
                 });
 
-            modelBuilder.Entity("DevIO.Business.Models.Produto", b =>
+            modelBuilder.Entity("DevIO.Business.Models.Ranking", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("char(36)");
 
-                    b.Property<bool>("Ativo")
-                        .HasColumnType("bit");
+                    b.Property<string>("IdClash")
+                        .HasColumnType("varchar(100)");
 
-                    b.Property<DateTime>("DataCadastro")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Nome")
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<int>("Vitoria")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Rankings");
+                });
+
+            modelBuilder.Entity("DevIO.Business.Models.Torneio", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<DateTime>("DataTorneio")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Descricao")
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<bool>("Excluido")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("HorarioAbertura")
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("HorarioInicio")
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("NomeTorneio")
                         .IsRequired()
                         .HasColumnType("varchar(1000)");
 
-                    b.Property<Guid>("FornecedorId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Imagem")
-                        .IsRequired()
+                    b.Property<string>("Senha")
                         .HasColumnType("varchar(100)");
 
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("varchar(200)");
-
-                    b.Property<decimal>("Valor")
-                        .HasColumnType("decimal");
+                    b.Property<string>("ValorTorneio")
+                        .HasColumnType("varchar(100)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FornecedorId");
-
-                    b.ToTable("Produtos");
+                    b.ToTable("Torneios");
                 });
 
-            modelBuilder.Entity("DevIO.Business.Models.EnderecoCliente", b =>
+            modelBuilder.Entity("DevIO.Business.Models.Pagamento", b =>
                 {
-                    b.HasOne("DevIO.Business.Models.Cliente", "Cliente")
-                        .WithOne("Endereco")
-                        .HasForeignKey("DevIO.Business.Models.EnderecoCliente", "ClienteId")
+                    b.HasOne("DevIO.Business.Models.Jogador", "Jogador")
+                        .WithMany("Pagamento")
+                        .HasForeignKey("JogadorId")
                         .IsRequired();
+
+                    b.HasOne("DevIO.Business.Models.Torneio", "Torneio")
+                        .WithMany()
+                        .HasForeignKey("TorneioId")
+                        .IsRequired();
+
+                    b.Navigation("Jogador");
+
+                    b.Navigation("Torneio");
                 });
 
-            modelBuilder.Entity("DevIO.Business.Models.EnderecoFornecedor", b =>
+            modelBuilder.Entity("DevIO.Business.Models.Jogador", b =>
                 {
-                    b.HasOne("DevIO.Business.Models.Fornecedor", "Fornecedor")
-                        .WithOne("Endereco")
-                        .HasForeignKey("DevIO.Business.Models.EnderecoFornecedor", "FornecedorId")
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("DevIO.Business.Models.Produto", b =>
-                {
-                    b.HasOne("DevIO.Business.Models.Fornecedor", "Fornecedor")
-                        .WithMany("Produtos")
-                        .HasForeignKey("FornecedorId")
-                        .IsRequired();
+                    b.Navigation("Pagamento");
                 });
 #pragma warning restore 612, 618
         }

@@ -18,6 +18,12 @@ namespace DevIO.Api.DTO
 
         [Compare("Password", ErrorMessage = "As senhas não conferem, estão diferentes.")]
         public string ConfirmPassword { get; set; }
+
+        public string IdClash { get; set; }
+
+        public string Celular { get; set; }
+
+        public string Nome { get; set; }
     }
 
     public class LoginUserDto
@@ -35,6 +41,8 @@ namespace DevIO.Api.DTO
     {
         public string Id { get; set; }
         public string Email { get; set; }
+        public Guid JogadorId { get; set; }
+        public string IdClash { get; set; }
         public IEnumerable<ClaimDto> Claims { get; set; }
     }
 

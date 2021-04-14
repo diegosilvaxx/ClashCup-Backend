@@ -13,6 +13,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+using System;
 using IHostingEnvironment = Microsoft.Extensions.Hosting.IHostingEnvironment;
 
 namespace DevIO.Api
@@ -39,17 +41,36 @@ namespace DevIO.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddLogging(loggingBuilder => {
+            services.AddLogging(loggingBuilder =>
+            {
                 loggingBuilder.AddConsole()
                     .AddFilter(DbLoggerCategory.Database.Command.Name, LogLevel.Information);
                 loggingBuilder.AddDebug();
             });
+            //SQL SERVER
+            //services.AddDbContext<MeuDbContext>(options =>
+            //{
+            //    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+            //    options.EnableSensitiveDataLogging(true);
+            //    options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+            //});
+
+            //MY SQL
+
             services.AddDbContext<MeuDbContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+                options.UseMySql(Configuration.GetConnectionString("DefaultConnection"), new MySqlServerVersion(new Version(8, 0, 21)), // use MariaDbServerVersion for MariaDB
+                        mySqlOptions => mySqlOptions
+                            .CharSetBehavior(CharSetBehavior.NeverAppend))
+                    // Everything from this point on is optional but helps with debugging.
+                    .EnableSensitiveDataLogging()
+                    .EnableDetailedErrors(); 
                 options.EnableSensitiveDataLogging(true);
                 options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
             });
+
+
+
 
             services.AddIdentityConfig(Configuration);
 
@@ -60,10 +81,9 @@ namespace DevIO.Api
             services.AddSwaggerConfig();
 
             services.AddHealthChecks()
-                .AddCheck("Produtos",new SqlServerHealthCheck(Configuration.GetConnectionString("DefaultConnection")))
-                .AddSqlServer(Configuration.GetConnectionString("DefaultConnection"), name: "BancoSQL");
+                .AddCheck("Jogadores", new SqlServerHealthCheck(Configuration.GetConnectionString("DefaultConnection")))
+                .AddSqlServer(Configuration.GetConnectionString("DefaultConnection"), name: "MinhaAppMvcCore");
 
-            services.AddHealthChecksUI().AddInMemoryStorage();
 
             services.ResolveDependencies();
         }

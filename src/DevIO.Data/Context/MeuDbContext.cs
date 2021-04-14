@@ -11,11 +11,28 @@ namespace DevIO.Data.Context
     {
         public MeuDbContext(DbContextOptions<MeuDbContext> options) : base(options) { }
 
-        public DbSet<Cliente> Clientes { get; set; }
-        public DbSet<Produto> Produtos { get; set; }
-        public DbSet<EnderecoCliente> EnderecoCliente { get; set; }
-        public DbSet<EnderecoFornecedor> EnderecoFornecedores { get; set; }
-        public DbSet<Fornecedor> Fornecedores { get; set; }
+        public DbSet<Jogador> Jogadores { get; set; }
+        public DbSet<Torneio> Torneios { get; set; }
+        public DbSet<Pagamento> Pagamentos { get; set; }
+
+        public DbSet<Ranking> Rankings { get; set; }
+
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    if (!optionsBuilder.IsConfigured)
+        //    {
+        //        //MY SQL
+        //        var host = "us-cdbr-east-03.cleardb.com";
+        //        var port = "3306";
+        //        var password = "a7462233";
+        //        var database = "heroku_3a00212b36402c7";
+
+        //        optionsBuilder.UseMySql($"server={host};userid=root;pwd={password};"
+        //                + $"port={port};database={database}");
+        //        optionsBuilder.EnableSensitiveDataLogging(true);
+        //        optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+        //    }
+        //}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

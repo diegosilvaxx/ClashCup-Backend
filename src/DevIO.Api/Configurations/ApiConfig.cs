@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Net.Http.Headers;
 
 namespace DevIO.Api.Configurations
 {
@@ -40,7 +41,7 @@ namespace DevIO.Api.Configurations
                 options.AddPolicy("Production",
                     builder => builder
                         .WithMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                        .WithOrigins("https://devioapi20201030233136.azurewebsites.net", "https://localhost:44324/", "http://localhost:3000/")
+                        .WithOrigins("https://login.clashcup.com.br")
                         .AllowAnyHeader());
 
             });

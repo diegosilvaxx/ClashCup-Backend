@@ -1,0 +1,9 @@
+C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Business\bin\Release\netcoreapp3.1\DevIO.Business.deps.json
+C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Business\bin\Release\netcoreapp3.1\DevIO.Business.dll
+C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Business\bin\Release\netcoreapp3.1\DevIO.Business.pdb
+C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Business\obj\Release\netcoreapp3.1\DevIO.Business.csprojAssemblyReference.cache
+C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Business\obj\Release\netcoreapp3.1\DevIO.Business.AssemblyInfoInputs.cache
+C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Business\obj\Release\netcoreapp3.1\DevIO.Business.AssemblyInfo.cs
+C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Business\obj\Release\netcoreapp3.1\DevIO.Business.csproj.CoreCompileInputs.cache
+C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Business\obj\Release\netcoreapp3.1\DevIO.Business.dll
+C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Business\obj\Release\netcoreapp3.1\DevIO.Business.pdb

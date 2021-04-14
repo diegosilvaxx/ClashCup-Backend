@@ -2,6 +2,8 @@
 using DevIO.Api.DTO;
 using DevIO.Api.Extensions;
 using DevIO.Business.Intefaces;
+using DevIO.Business.Models;
+using DevIO.Business.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -18,7 +20,7 @@ using System.Threading.Tasks;
 namespace DevIO.Api.Controllers.V1
 {
     [ApiVersion("1.0")]
-    [Route("api/v{version:apiVersion}")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [AllowAnonymous]
     [ApiController]
     public class AuthController : MainController
@@ -26,17 +28,20 @@ namespace DevIO.Api.Controllers.V1
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly AppSettings _appSettings;
+        private readonly IJogadorService _jogadorService;
+
 
         public AuthController(INotificador notificador,
                               SignInManager<IdentityUser> signInManager,
                               UserManager<IdentityUser> userManager,
                               IOptions<AppSettings> appSettings,
-                              IUser user
-            ) : base(notificador, user)
+                              IUser user, 
+                              IJogadorService jogadorService) : base(notificador, user)
         {
             _signInManager = signInManager;
             _userManager = userManager;
             _appSettings = appSettings.Value;
+            _jogadorService = jogadorService;
         }
 
         [HttpPost("register")]
@@ -48,13 +53,21 @@ namespace DevIO.Api.Controllers.V1
             {
                 UserName = registerUserDto.Email,
                 Email = registerUserDto.Email,
-                EmailConfirmed = true
+                EmailConfirmed = true,
             };
 
             var result = await _userManager.CreateAsync(user, registerUserDto.Password);
             if (result.Succeeded)
             {
                 await _signInManager.SignInAsync(user, false);
+                await _jogadorService.Adicionar(new Jogador
+                {
+                    Celular = registerUserDto.Celular,
+                    Email = registerUserDto.Email,
+                    IdClash = registerUserDto.IdClash,
+                    UserId = user.Id,
+                    Nome = registerUserDto.Nome
+                });
                 return CustomResponse(await GerarJwt(user.Email));
             }
             foreach (var error in result.Errors)
@@ -129,7 +142,9 @@ namespace DevIO.Api.Controllers.V1
                 {
                     Id = user.Id,
                     Email = user.Email,
-                    Claims = claims.Select(c => new ClaimDto { Type = c.Type, Value = c.Value })
+                    JogadorId = await _jogadorService.GetById(user.Id),
+                    IdClash = await _jogadorService.GetIdClashById(user.Id),
+                    Claims = claims.Select(c => new ClaimDto { Type = c.Type, Value = c.Value }),
                 }
             };
 
