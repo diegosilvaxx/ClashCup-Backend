@@ -30,15 +30,29 @@ namespace DevIO.Business.Services
             foreach (var item in rankingResult)
             {
                 var result = await GetPlayer(item.IdClash);
-                listRanking.Add(new RankingModelDto
+                if (result.Name != null)
                 {
-                    Arena = result.Arena.Name,
-                    Cla = result.Clan.Name,
-                    Player = result.Name,
-                    Trofeu = result.Trophies,
-                    Vitoria = item.Vitoria,
-                    Nome = item.Nome
-                });
+                    listRanking.Add(new RankingModelDto
+                    {
+                        Arena = result.Arena.Name,
+                        Cla = result.Clan.Name,
+                        Player = result.Name,
+                        Trofeu = result.Trophies,
+                        Vitoria = item.Vitoria,
+                        Nome = item.Nome,
+                        IdClash = item.IdClash,
+                    });
+                }
+                else
+                {
+                    listRanking.Add(new RankingModelDto
+                    {
+                        Vitoria = item.Vitoria,
+                        Nome = item.Nome,
+                        IdClash = item.IdClash,
+                    });
+                }
+
             }
 
             return listRanking;
