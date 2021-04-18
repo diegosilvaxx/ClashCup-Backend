@@ -10,5 +10,6 @@ namespace DevIO.Business.Intefaces
     public interface IRankingService 
     {
         Task<List<RankingModelDto>> Filter();
+        Task<ClashRoyaleDto> GetPlayer(string idClash);
     }
 }

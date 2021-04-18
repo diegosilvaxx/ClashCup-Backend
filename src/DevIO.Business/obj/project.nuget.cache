@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "/xcw0VtumYZtmoFlYynQ/fbV3T7QQyfWRZQ+JtEw2xAtu8TUM12iP6JQ2p6+91sryo1QdAMiMQ/O/sr76bVuaw==",
+  "dgSpecHash": "kT/chXF44yJztnrNzzEdTuEzDEuPHQdLth7JADbzOKkka13aqpI+ZkB9CCP3Hyy72iV5F8FUYXOiq+jYi7bJ0g==",
   "success": true,
   "projectFilePath": "C:\\Users\\diego\\source\\repos\\ClashCup\\backend\\src\\DevIO.Business\\DevIO.Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\diego\\.nuget\\packages\\fluentvalidation\\8.3.0\\fluentvalidation.8.3.0.nupkg.sha512",
+    "C:\\Users\\diego\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\diego\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
     "C:\\Users\\diego\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\diego\\.nuget\\packages\\system.componentmodel.annotations\\4.4.1\\system.componentmodel.annotations.4.4.1.nupkg.sha512"
   ],

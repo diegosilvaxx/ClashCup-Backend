@@ -45,5 +45,15 @@ namespace DevIO.Api.Controllers
 
             return CustomResponse(torneio);
         }
+
+        [HttpGet("Perfil/{id}")]
+        public async Task<ActionResult<TorneioDto>> GetPerfil(string id)
+        {
+            var torneio = await _rankingService.GetPlayer(id);
+
+            if (torneio == null) return NotFound();
+
+            return CustomResponse(torneio);
+        }
     }
 }

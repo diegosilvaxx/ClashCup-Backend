@@ -7,6 +7,7 @@ using DevIO.Business.DTO;
 using DevIO.Business.Intefaces;
 using DevIO.Business.Models;
 using DevIO.Business.Models.Validations;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 
 namespace DevIO.Business.Services
@@ -14,10 +15,12 @@ namespace DevIO.Business.Services
     public class RankingService :IRankingService
     {
         private readonly IRankingRepository _rankingRepository;
+        private readonly IConfiguration _configuration;
 
-        public RankingService(IRankingRepository rankingRepository)
+        public RankingService(IRankingRepository rankingRepository, IConfiguration configuration)
         {
             _rankingRepository = rankingRepository;
+            _configuration = configuration;
         }
 
         public async Task<List<RankingModelDto>> Filter()
@@ -61,8 +64,12 @@ namespace DevIO.Business.Services
         public async Task<ClashRoyaleDto> GetPlayer(string idClash)
         {
             HttpClient client = new HttpClient();
+
+            var token = _configuration.GetSection("ClashAPI").GetSection("token").Value;
             client.DefaultRequestHeaders.Authorization =
-            new AuthenticationHeaderValue("Bearer", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjM2NDQ2OTc1LWVmMTgtNDJmZS1iZDUzLTdlOGE3ZWYzNzI2ZCIsImlhdCI6MTYxODM2MjE3NSwic3ViIjoiZGV2ZWxvcGVyLzIyNmVkM2NlLWUwYTYtOWE5My1lYzZiLTY0Yzg5OTZiZGJmYyIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyIxOTEuNi4yMTguMTI1Il0sInR5cGUiOiJjbGllbnQifV19.unfX931FP3pQ3J9o3spAcGuq70z0banla982E63AcFo5MnGYHuvYv7RH-Q06oeZ02_ruhK2vI5ef_wW90xyM5A");
+            new AuthenticationHeaderValue("Bearer", token);
+
+
 
             client.BaseAddress = new Uri($"https://api.clashroyale.com/v1/players/%23{idClash.Replace("#","")}");
 
