@@ -28,6 +28,9 @@ namespace DevIO.Api.Configurations
                 options.Password.RequiredUniqueChars = 0;
             });
 
+            services.Configure<DataProtectionTokenProviderOptions>(opt =>
+            opt.TokenLifespan = TimeSpan.FromHours(2));
+
             services.AddDbContext<ApplicationDbContext>(options =>
             {
                 options.UseMySql(configuration.GetConnectionString("DefaultConnection"), new MySqlServerVersion(new Version(8, 0, 21)), // use MariaDbServerVersion for MariaDB

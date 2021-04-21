@@ -4,6 +4,7 @@ using DevIO.Api.Extensions;
 using DevIO.Business.Intefaces;
 using DevIO.Business.Models;
 using DevIO.Business.Services;
+using EmailService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -11,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
@@ -29,19 +31,23 @@ namespace DevIO.Api.Controllers.V1
         private readonly UserManager<IdentityUser> _userManager;
         private readonly AppSettings _appSettings;
         private readonly IJogadorService _jogadorService;
+        private readonly IEmailSender _emailSender;
+        public const string ConfirmEmailTokenPurpose = "EmailConfirmation";
+
 
 
         public AuthController(INotificador notificador,
                               SignInManager<IdentityUser> signInManager,
                               UserManager<IdentityUser> userManager,
                               IOptions<AppSettings> appSettings,
-                              IUser user, 
-                              IJogadorService jogadorService) : base(notificador, user)
+                              IUser user,
+                              IJogadorService jogadorService, IEmailSender emailSender) : base(notificador, user)
         {
             _signInManager = signInManager;
             _userManager = userManager;
             _appSettings = appSettings.Value;
             _jogadorService = jogadorService;
+            _emailSender = emailSender;
         }
 
         [HttpPost("register")]
@@ -153,6 +159,50 @@ namespace DevIO.Api.Controllers.V1
 
         private static long ToUnixEpochDate(DateTime date)
             => (long)Math.Round((date.ToUniversalTime() - new DateTimeOffset(1970, 1, 1, 0, 0, 0, TimeSpan.Zero)).TotalSeconds);
+
+        [HttpPost("redefinirSenha")]
+        public async void Post(ForgotPasswordDto forgotPasswordDto)
+        {
+            var user = await _userManager.FindByEmailAsync(forgotPasswordDto.Email);
+            if (user == null) return;
+
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+
+
+            var message = new Message(new string[] { forgotPasswordDto.Email }, "Redefinir senha Clash Cup", $"Alguém solicitou alteração nas suas credenciais da conta do Clash Cup. Se foi você, click no link abaixo para redefinir sua senha. https://login.clashcup.com.br/resetPassword?token={token}");
+            _emailSender.SendEmail(message);
+        }
+
+        [HttpPost("updateSenha")]
+        public async Task<ActionResult> UpdateSenha(UpdatePasswordDto updatePasswordDto)
+        {
+            var user = await _userManager.FindByEmailAsync(updatePasswordDto.Email);
+            if (user == null) {
+                return CustomResponse("Email invalido.");
+            } 
+
+            var isValid = await _userManager.VerifyUserTokenAsync(user,
+                _userManager.Options.Tokens.EmailConfirmationTokenProvider, 
+                ConfirmEmailTokenPurpose, updatePasswordDto.Token);
+
+            if (isValid)
+            {
+                if (updatePasswordDto.Password == updatePasswordDto.ConfirmPassword)
+                {
+                    _ = _userManager.ChangePasswordAsync(user, updatePasswordDto.Password, updatePasswordDto.ConfirmPassword);
+                    return Ok();
+                }
+                else
+                {
+                    return CustomResponse("Password divergente do Confirmar Passowrd.");
+                }
+            }
+            else
+            {
+                return CustomResponse("Token invalido ou expirado.");
+            }
+
+        }
 
     }
 }

@@ -1,0 +1,9 @@
+C:\Users\diego\source\repos\ClashCup\backend\EmailService\bin\Release\netcoreapp3.1\EmailService.deps.json
+C:\Users\diego\source\repos\ClashCup\backend\EmailService\bin\Release\netcoreapp3.1\EmailService.dll
+C:\Users\diego\source\repos\ClashCup\backend\EmailService\bin\Release\netcoreapp3.1\EmailService.pdb
+C:\Users\diego\source\repos\ClashCup\backend\EmailService\obj\Release\netcoreapp3.1\EmailService.csprojAssemblyReference.cache
+C:\Users\diego\source\repos\ClashCup\backend\EmailService\obj\Release\netcoreapp3.1\EmailService.AssemblyInfoInputs.cache
+C:\Users\diego\source\repos\ClashCup\backend\EmailService\obj\Release\netcoreapp3.1\EmailService.AssemblyInfo.cs
+C:\Users\diego\source\repos\ClashCup\backend\EmailService\obj\Release\netcoreapp3.1\EmailService.csproj.CoreCompileInputs.cache
+C:\Users\diego\source\repos\ClashCup\backend\EmailService\obj\Release\netcoreapp3.1\EmailService.dll
+C:\Users\diego\source\repos\ClashCup\backend\EmailService\obj\Release\netcoreapp3.1\EmailService.pdb

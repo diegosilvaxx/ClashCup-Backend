@@ -3,6 +3,7 @@ using DevIO.Api.Configuration;
 using DevIO.Api.Configurations;
 using DevIO.Api.Extensions;
 using DevIO.Data.Context;
+using EmailService;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -57,6 +58,12 @@ namespace DevIO.Api
 
             //MY SQL
 
+            var emailConfig = Configuration
+            .GetSection("EmailConfiguration")
+            .Get<EmailConfiguration>();
+            services.AddSingleton(emailConfig);
+            services.AddScoped<IEmailSender, EmailSender>();
+
             services.AddDbContext<MeuDbContext>(options =>
             {
                 options.UseMySql(Configuration.GetConnectionString("DefaultConnection"), new MySqlServerVersion(new Version(8, 0, 21)), // use MariaDbServerVersion for MariaDB
@@ -64,7 +71,7 @@ namespace DevIO.Api
                             .CharSetBehavior(CharSetBehavior.NeverAppend))
                     // Everything from this point on is optional but helps with debugging.
                     .EnableSensitiveDataLogging()
-                    .EnableDetailedErrors(); 
+                    .EnableDetailedErrors();
                 options.EnableSensitiveDataLogging(true);
                 options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
             });

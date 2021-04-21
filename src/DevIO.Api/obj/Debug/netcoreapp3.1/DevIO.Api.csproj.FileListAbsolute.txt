@@ -1313,3 +1313,8 @@ C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Debug\netcoreapp3
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Debug\netcoreapp3.1\DevIO.Api.dll
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Debug\netcoreapp3.1\DevIO.Api.pdb
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Debug\netcoreapp3.1\DevIO.Api.genruntimeconfig.cache
+C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\bin\Debug\netcoreapp3.1\NETCore.MailKit.dll
+C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\bin\Debug\netcoreapp3.1\EmailService.dll
+C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\bin\Debug\netcoreapp3.1\EmailService.pdb
