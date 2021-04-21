@@ -28,6 +28,7 @@ C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreap
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\K4os.Compression.LZ4.Streams.dll
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\K4os.Hash.xxHash.dll
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\KubernetesClient.dll
+C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\MailKit.dll
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.AspNetCore.AzureKeyVault.HostingStartup.dll
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.AspNetCore.Cryptography.Internal.dll
@@ -118,12 +119,14 @@ C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreap
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\MimeKit.dll
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\MySql.Data.dll
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\Ubiety.Dns.Core.dll
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\Zstandard.Net.dll
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\MySql.Data.EntityFramework.dll
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\MySql.Data.EntityFrameworkCore.dll
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\MySqlConnector.dll
+C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\NETCore.MailKit.dll
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\NetTopologySuite.dll
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\Newtonsoft.Json.dll
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\Newtonsoft.Json.Bson.dll
@@ -246,6 +249,8 @@ C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreap
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\DevIO.Business.dll
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\DevIO.Data.dll
+C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\EmailService.dll
+C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\EmailService.pdb
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\DevIO.Business.pdb
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\DevIO.Data.pdb
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\Identity\css\site.css

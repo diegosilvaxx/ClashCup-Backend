@@ -20,19 +20,13 @@ namespace DevIO.Api.Controllers
     [ApiController]
     public class RankingController : MainController
     {
-        private readonly IRankingRepository _rankingRepository;
         private readonly IRankingService _rankingService;
-        private readonly IMapper _mapper;
 
 
         public RankingController(INotificador notificador,
-                                 IMapper mapper,
-                                 IRankingRepository rankingRepository,
                                  IRankingService rankingService,
                                  IUser user) : base(notificador, user)
         {
-            _mapper = mapper;
-            _rankingRepository = rankingRepository;
             _rankingService = rankingService;
         }
 

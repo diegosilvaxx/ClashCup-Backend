@@ -8,11 +8,11 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAo2P1V3d5UEihdBskjVSF1wAAAAACAAAAAAAQZgAAAAEAACAAAADH3RLbkGLmNAy8HEE1AP+w1O9Ed4achHmeqZGPZuCtgQAAAAAOgAAAAAIAACAAAABpEbfQlsuyw0d/mffb9L8+F/czI/CNO6bSsmGFJkJlliAAAADVO/sMsWZQMuJwZhA9Nd4MuAvD1naGc1Iss89fStp1KUAAAABKgoDADXsQryhjiEzsxtaLP9ssM232htS7EmLHUJ/NJUCo0YTjBuyiWo5sH97htXKfFVGMZERLAAOJX6PYneGx</EncryptedPassword>
     <_PublishTargetUrl>ftp://ftp.web22f53.kinghost.net/www/api</_PublishTargetUrl>
-    <History>False|2021-04-21T03:08:09.7073397Z;False|2021-04-21T00:07:53.6778669-03:00;False|2021-04-21T00:07:43.7570683-03:00;True|2021-04-17T00:21:57.4166299-03:00;False|2021-04-17T00:21:19.6160481-03:00;False|2021-04-17T00:20:51.1739465-03:00;True|2021-04-14T22:55:57.2889281-03:00;True|2021-04-13T22:26:20.6158203-03:00;False|2021-04-13T22:24:12.6944543-03:00;False|2021-04-13T22:16:02.5029019-03:00;True|2021-04-13T08:50:58.2187073-03:00;False|2021-04-13T08:50:28.2251002-03:00;True|2021-04-13T08:30:25.7442353-03:00;False|2021-04-13T08:29:53.9982177-03:00;True|2021-04-13T08:18:44.4930737-03:00;False|2021-04-13T08:17:55.0730774-03:00;True|2021-04-12T15:36:47.8048220-03:00;True|2021-04-12T15:31:52.4640825-03:00;True|2021-04-09T22:02:36.7222092-03:00;True|2021-04-09T21:53:14.7314231-03:00;True|2021-04-09T19:59:13.8343382-03:00;False|2021-04-09T19:55:23.6209425-03:00;False|2021-04-09T19:55:04.0989818-03:00;False|2021-04-09T19:54:40.1592641-03:00;False|2021-04-09T19:54:21.7150746-03:00;False|2021-04-09T19:53:43.2472994-03:00;False|2021-04-09T19:50:51.2250813-03:00;False|2021-04-09T19:46:33.7568830-03:00;False|2021-04-09T19:45:22.5458366-03:00;False|2021-04-09T19:44:37.5041391-03:00;False|2021-04-09T19:44:15.9896244-03:00;False|2021-04-09T19:41:49.9585743-03:00;False|2021-04-09T19:40:36.2136943-03:00;False|2021-04-09T19:37:58.5279896-03:00;False|2021-04-09T19:37:40.1564736-03:00;False|2021-04-09T19:37:06.4184023-03:00;False|2021-04-09T19:36:34.8791747-03:00;</History>
+    <History>True|2021-04-21T03:49:16.8040410Z;False|2021-04-21T00:48:43.5050251-03:00;True|2021-04-21T00:43:29.3857034-03:00;False|2021-04-21T00:42:56.6301762-03:00;True|2021-04-21T00:39:35.3604456-03:00;False|2021-04-21T00:38:57.1525030-03:00;True|2021-04-21T00:32:32.3225339-03:00;False|2021-04-21T00:31:58.1674239-03:00;True|2021-04-21T00:13:24.9476680-03:00;False|2021-04-21T00:11:27.2273177-03:00;False|2021-04-21T00:09:38.4405073-03:00;False|2021-04-21T00:09:01.8995487-03:00;False|2021-04-21T00:08:09.7073397-03:00;False|2021-04-21T00:07:53.6778669-03:00;False|2021-04-21T00:07:43.7570683-03:00;True|2021-04-17T00:21:57.4166299-03:00;False|2021-04-17T00:21:19.6160481-03:00;False|2021-04-17T00:20:51.1739465-03:00;True|2021-04-14T22:55:57.2889281-03:00;True|2021-04-13T22:26:20.6158203-03:00;False|2021-04-13T22:24:12.6944543-03:00;False|2021-04-13T22:16:02.5029019-03:00;True|2021-04-13T08:50:58.2187073-03:00;False|2021-04-13T08:50:28.2251002-03:00;True|2021-04-13T08:30:25.7442353-03:00;False|2021-04-13T08:29:53.9982177-03:00;True|2021-04-13T08:18:44.4930737-03:00;False|2021-04-13T08:17:55.0730774-03:00;True|2021-04-12T15:36:47.8048220-03:00;True|2021-04-12T15:31:52.4640825-03:00;True|2021-04-09T22:02:36.7222092-03:00;True|2021-04-09T21:53:14.7314231-03:00;True|2021-04-09T19:59:13.8343382-03:00;False|2021-04-09T19:55:23.6209425-03:00;False|2021-04-09T19:55:04.0989818-03:00;False|2021-04-09T19:54:40.1592641-03:00;False|2021-04-09T19:54:21.7150746-03:00;False|2021-04-09T19:53:43.2472994-03:00;False|2021-04-09T19:50:51.2250813-03:00;False|2021-04-09T19:46:33.7568830-03:00;False|2021-04-09T19:45:22.5458366-03:00;False|2021-04-09T19:44:37.5041391-03:00;False|2021-04-09T19:44:15.9896244-03:00;False|2021-04-09T19:41:49.9585743-03:00;False|2021-04-09T19:40:36.2136943-03:00;False|2021-04-09T19:37:58.5279896-03:00;False|2021-04-09T19:37:40.1564736-03:00;False|2021-04-09T19:37:06.4184023-03:00;False|2021-04-09T19:36:34.8791747-03:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="appsettings.Development.json">
-      <publishTime>04/17/2021 00:05:58</publishTime>
+      <publishTime>04/21/2021 00:37:49</publishTime>
     </File>
     <File Include="appsettings.json">
       <publishTime>12/21/2020 22:56:21</publishTime>
@@ -69,34 +69,40 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/12/2019 17:08:36</publishTime>
     </File>
     <File Include="DevIO.Api.deps.json">
-      <publishTime>04/17/2021 00:21:36</publishTime>
+      <publishTime>04/21/2021 00:48:53</publishTime>
     </File>
     <File Include="DevIO.Api.dll">
-      <publishTime>04/17/2021 00:21:35</publishTime>
+      <publishTime>04/21/2021 00:48:51</publishTime>
     </File>
     <File Include="DevIO.Api.exe">
-      <publishTime>04/17/2021 00:21:35</publishTime>
+      <publishTime>04/21/2021 00:48:52</publishTime>
     </File>
     <File Include="DevIO.Api.pdb">
-      <publishTime>04/17/2021 00:21:35</publishTime>
+      <publishTime>04/21/2021 00:48:51</publishTime>
     </File>
     <File Include="DevIO.Api.runtimeconfig.json">
-      <publishTime>04/17/2021 00:20:27</publishTime>
+      <publishTime>04/21/2021 00:12:46</publishTime>
     </File>
     <File Include="DevIO.Business.dll">
-      <publishTime>04/17/2021 00:20:25</publishTime>
+      <publishTime>04/21/2021 00:12:44</publishTime>
     </File>
     <File Include="DevIO.Business.pdb">
-      <publishTime>04/17/2021 00:20:25</publishTime>
+      <publishTime>04/21/2021 00:12:44</publishTime>
     </File>
     <File Include="DevIO.Data.dll">
-      <publishTime>04/14/2021 22:55:26</publishTime>
+      <publishTime>04/21/2021 00:12:45</publishTime>
     </File>
     <File Include="DevIO.Data.pdb">
-      <publishTime>04/14/2021 22:55:26</publishTime>
+      <publishTime>04/21/2021 00:12:45</publishTime>
     </File>
     <File Include="dotnet-aspnet-codegenerator-design.dll">
       <publishTime>08/03/2020 18:30:10</publishTime>
+    </File>
+    <File Include="EmailService.dll">
+      <publishTime>04/21/2021 00:07:41</publishTime>
+    </File>
+    <File Include="EmailService.pdb">
+      <publishTime>04/21/2021 00:07:41</publishTime>
     </File>
     <File Include="EntityFramework.dll">
       <publishTime>04/16/2020 20:38:44</publishTime>
@@ -202,6 +208,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="KubernetesClient.dll">
       <publishTime>08/10/2020 23:03:06</publishTime>
+    </File>
+    <File Include="MailKit.dll">
+      <publishTime>04/04/2020 02:00:10</publishTime>
     </File>
     <File Include="Microsoft.AspNetCore.Authentication.JwtBearer.dll">
       <publishTime>08/21/2020 21:29:30</publishTime>
@@ -470,6 +479,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll">
       <publishTime>08/03/2020 18:30:06</publishTime>
     </File>
+    <File Include="MimeKit.dll">
+      <publishTime>04/04/2020 00:59:56</publishTime>
+    </File>
     <File Include="MySql.Data.dll">
       <publishTime>12/09/2020 00:51:10</publishTime>
     </File>
@@ -481,6 +493,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="MySqlConnector.dll">
       <publishTime>03/22/2021 23:26:14</publishTime>
+    </File>
+    <File Include="NETCore.MailKit.dll">
+      <publishTime>05/21/2020 16:22:12</publishTime>
     </File>
     <File Include="NetTopologySuite.dll">
       <publishTime>08/04/2020 13:10:40</publishTime>
@@ -735,7 +750,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/09/2020 00:49:56</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>04/17/2021 00:21:36</publishTime>
+      <publishTime>04/21/2021 00:48:53</publishTime>
     </File>
     <File Include="wwwroot/Identity/css/site.css">
       <publishTime>08/21/2020 21:16:02</publishTime>

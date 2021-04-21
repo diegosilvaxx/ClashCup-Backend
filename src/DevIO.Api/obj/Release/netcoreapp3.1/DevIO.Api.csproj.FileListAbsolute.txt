@@ -758,3 +758,8 @@ C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreap
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\DevIO.Api.dll
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\DevIO.Api.pdb
 C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\obj\Release\netcoreapp3.1\DevIO.Api.genruntimeconfig.cache
+C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\bin\Release\netcoreapp3.1\MailKit.dll
+C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\bin\Release\netcoreapp3.1\MimeKit.dll
+C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\bin\Release\netcoreapp3.1\NETCore.MailKit.dll
+C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\bin\Release\netcoreapp3.1\EmailService.dll
+C:\Users\diego\source\repos\ClashCup\backend\src\DevIO.Api\bin\Release\netcoreapp3.1\EmailService.pdb

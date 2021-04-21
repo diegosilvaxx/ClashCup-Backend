@@ -23,7 +23,8 @@
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Production"
-      }
+      },
+      "ancmHostingModel": "InProcess"
     },
     "DevIO.Api": {
       "commandName": "Project",
