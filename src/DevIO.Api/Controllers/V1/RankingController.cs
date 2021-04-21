@@ -43,11 +43,20 @@ namespace DevIO.Api.Controllers
         [HttpGet("Perfil/{id}")]
         public async Task<ActionResult<TorneioDto>> GetPerfil(string id)
         {
-            var torneio = await _rankingService.GetPlayer(id);
+            try
+            {
+                var torneio = await _rankingService.GetPlayer(id);
 
-            if (torneio == null) return NotFound();
+                if (torneio == null) return NotFound();
 
-            return CustomResponse(torneio);
+                return CustomResponse(torneio);
+            }
+            catch (Exception)
+            {
+                NotificarErro("Perfil Jogador não encontrado.");
+                return CustomResponse();
+            }
+
         }
     }
 }

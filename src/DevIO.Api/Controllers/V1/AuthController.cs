@@ -179,25 +179,28 @@ namespace DevIO.Api.Controllers.V1
             var user = await _userManager.FindByEmailAsync(updatePasswordDto.Email);
             if (user == null)
             {
-                return CustomResponse("Email invalido.");
+                NotificarErro("Email invalido.");
+                return CustomResponse();
             }
-           
+
 
             if (updatePasswordDto.Password == updatePasswordDto.ConfirmPassword)
             {
-                var result = await _userManager.ResetPasswordAsync(user, "CfDJ8BEiIMj9vwZPg7WWZGAgRMIWEf3GGZ6xYH4wa9dnqx6kxP1N/HjP0a9dvhJDaMr8AlbtXOIHPP0hG9S9M/k+aj9wQAj2u9ZdB2jxAPtfhFOs6NCDmZ3kH2thMMEipY/S/dExBgj6ZQt6swa35dOo3b1GyF7sX23ahOfSNOWo4mC1XUIo/GMjHkkM/QqvBMF7rDj0hfRjOmJZMXr6gJHhcq3rPTCu8gz0LK8ytcP7bqal", updatePasswordDto.Password);
+                var result = await _userManager.ResetPasswordAsync(user, updatePasswordDto.Token, updatePasswordDto.Password);
                 if(result.Succeeded)
                 {
                     return Ok();
                 }
                 else
                 {
-                    return CustomResponse("Token invalido ou expirado.");
+                    NotificarErro("Token invalido ou expirado.");
+                    return CustomResponse();
                 }
             }
             else
             {
-                return CustomResponse("Password divergente do Confirmar Passowrd.");
+                NotificarErro("Password divergente do Confirmar Passowrd.");
+                return CustomResponse();
             }
         }
     }

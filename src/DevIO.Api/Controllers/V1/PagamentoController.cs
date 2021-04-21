@@ -63,7 +63,11 @@ namespace DevIO.Api.Controllers.V1
 
 
 
-            if (pagamento.Count == 0) return CustomResponse(new { success = false });
+            if (pagamento.Count == 0) {
+                NotificarErro("Você não contém nenhum passport");
+                return CustomResponse();
+            }
+            
 
             var pagamentos = pagamento.FindAll(x => x.JogadorId == id);
 
