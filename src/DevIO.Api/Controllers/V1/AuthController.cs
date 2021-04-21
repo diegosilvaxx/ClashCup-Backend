@@ -32,7 +32,7 @@ namespace DevIO.Api.Controllers.V1
         private readonly AppSettings _appSettings;
         private readonly IJogadorService _jogadorService;
         private readonly IEmailSender _emailSender;
-        public const string ConfirmEmailTokenPurpose = "EmailConfirmation";
+        public const string ConfirmEmailTokenPurpose = "PasswordReset";
 
 
 
@@ -177,32 +177,28 @@ namespace DevIO.Api.Controllers.V1
         public async Task<ActionResult> UpdateSenha(UpdatePasswordDto updatePasswordDto)
         {
             var user = await _userManager.FindByEmailAsync(updatePasswordDto.Email);
-            if (user == null) {
-                return CustomResponse("Email invalido.");
-            } 
-
-            var isValid = await _userManager.VerifyUserTokenAsync(user,
-                _userManager.Options.Tokens.EmailConfirmationTokenProvider, 
-                ConfirmEmailTokenPurpose, updatePasswordDto.Token);
-
-            if (isValid)
+            if (user == null)
             {
-                if (updatePasswordDto.Password == updatePasswordDto.ConfirmPassword)
+                return CustomResponse("Email invalido.");
+            }
+           
+
+            if (updatePasswordDto.Password == updatePasswordDto.ConfirmPassword)
+            {
+                var result = await _userManager.ResetPasswordAsync(user, "CfDJ8BEiIMj9vwZPg7WWZGAgRMIWEf3GGZ6xYH4wa9dnqx6kxP1N/HjP0a9dvhJDaMr8AlbtXOIHPP0hG9S9M/k+aj9wQAj2u9ZdB2jxAPtfhFOs6NCDmZ3kH2thMMEipY/S/dExBgj6ZQt6swa35dOo3b1GyF7sX23ahOfSNOWo4mC1XUIo/GMjHkkM/QqvBMF7rDj0hfRjOmJZMXr6gJHhcq3rPTCu8gz0LK8ytcP7bqal", updatePasswordDto.Password);
+                if(result.Succeeded)
                 {
-                    _ = _userManager.ChangePasswordAsync(user, updatePasswordDto.Password, updatePasswordDto.ConfirmPassword);
                     return Ok();
                 }
                 else
                 {
-                    return CustomResponse("Password divergente do Confirmar Passowrd.");
+                    return CustomResponse("Token invalido ou expirado.");
                 }
             }
             else
             {
-                return CustomResponse("Token invalido ou expirado.");
+                return CustomResponse("Password divergente do Confirmar Passowrd.");
             }
-
         }
-
     }
 }

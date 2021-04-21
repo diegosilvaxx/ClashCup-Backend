@@ -1,0 +1,9 @@
+C:\Users\diego\source\repos\ClashCup\backend\EmailService\bin\Debug\netcoreapp3.1\publish\EmailService.dll
+C:\Users\diego\source\repos\ClashCup\backend\EmailService\bin\Debug\netcoreapp3.1\publish\EmailService.deps.json
+C:\Users\diego\source\repos\ClashCup\backend\EmailService\bin\Debug\netcoreapp3.1\publish\EmailService.pdb
+C:\Users\diego\source\repos\ClashCup\backend\EmailService\bin\Debug\netcoreapp3.1\publish\MailKit.dll
+C:\Users\diego\source\repos\ClashCup\backend\EmailService\bin\Debug\netcoreapp3.1\publish\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\diego\source\repos\ClashCup\backend\EmailService\bin\Debug\netcoreapp3.1\publish\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\diego\source\repos\ClashCup\backend\EmailService\bin\Debug\netcoreapp3.1\publish\MimeKit.dll
+C:\Users\diego\source\repos\ClashCup\backend\EmailService\bin\Debug\netcoreapp3.1\publish\NETCore.MailKit.dll
+C:\Users\diego\source\repos\ClashCup\backend\EmailService\bin\Debug\netcoreapp3.1\publish\BouncyCastle.Crypto.dll
