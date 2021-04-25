@@ -77,7 +77,7 @@ namespace DevIO.Api
             });
 
 
-
+            services.AddTransient<MeuDbContext>();
 
             services.AddIdentityConfig(Configuration);
 

@@ -1,17 +1,23 @@
-﻿using System;
+﻿using DevIO.Business.Models;
+using System;
+using System.ComponentModel.DataAnnotations;
 
-namespace DevIO.Business.Models
+namespace DevIO.Api.DTO
 {
-    public class Torneio : Entity
+    public class TorneioDtoNew
     {
+        [Key]
+        public Guid Id { get; set; }
+
         public string ValorTorneio { get; set; }
         public string Senha { get; set; }
         public string HorarioInicio { get; set; }
         public string HorarioAbertura { get; set; }
         public string NomeTorneio { get; set; }
-        public string Descricao { get; set; }
-        public string Tag { get; set; }
+
         public DateTime DataTorneio { get; set; }
+        public string Descricao { get; set; }
         public bool Excluido { get; set; }
+        public int NumeroJogadores { get; set; }
     }
 }

@@ -81,5 +81,88 @@ namespace DevIO.Business.Services
             return resultClash;
         }
 
+        public async Task<ClashRoyaleRankingDto> GetRankingById(string idClash)
+        {
+            HttpClient client = new HttpClient();
+
+            var token = _configuration.GetSection("ClashAPI").GetSection("token").Value;
+            client.DefaultRequestHeaders.Authorization =
+            new AuthenticationHeaderValue("Bearer", token);
+
+
+
+            client.BaseAddress = new Uri($"https://api.clashroyale.com/v1/tournaments/%23{idClash.Replace("#", "")}");
+
+            var result = await client.GetAsync(client.BaseAddress);
+
+            var resultRead = await result.Content.ReadAsStringAsync();
+
+            var resultClash = JsonConvert.DeserializeObject<ClashRoyaleRankingDto>(resultRead);
+            return resultClash;
+        }
+
+       public async Task<List<RankingModelDto>> UpdateRanking(string tag)
+        {
+            List<RankingModelDto> listRanking = new List<RankingModelDto>();
+            var ranking = await GetRankingById(tag);
+
+            foreach (var item in ranking.MembersList)
+            {
+                var result = await GetPlayer(item.Tag);
+                if (result.Name != null)
+                {
+                    listRanking.Add(new RankingModelDto
+                    {
+                        Arena = result.Arena.Name,
+                        Cla = result.Clan.Name,
+                        Player = result.Name,
+                        Trofeu = result.Trophies,
+                        Vitoria = item.Score,
+                        Nome = ranking.Name,
+                        IdClash = item.Tag,
+                    });
+                }
+                else
+                {
+                    listRanking.Add(new RankingModelDto
+                    {
+                        Vitoria = item.Score,
+                        Nome = ranking.Name,
+                        IdClash = item.Tag,
+                    });
+                }
+            }
+
+            foreach (var item in listRanking)
+            {
+                var jogador = await _rankingRepository.ObterTodos();
+                var result = jogador.Find(x => x.IdClash == item.IdClash);
+
+                bool isUpdate = jogador.Contains(jogador.Find(x => x.IdClash == item.IdClash));
+
+                if (isUpdate)
+                {
+                   await _rankingRepository.Atualizar(new Ranking
+                    {
+                        IdClash = item.IdClash,
+                        Nome = item.Player,
+                        Vitoria = item.Vitoria + result.Vitoria,
+                        Id = result.Id
+                   });
+                }
+                else
+                {
+                    await _rankingRepository.Adicionar(new Ranking
+                    {
+                        IdClash = item.IdClash,
+                        Nome = item.Player,
+                        Vitoria = item.Vitoria
+                    });
+                }
+
+            }
+            return listRanking;
+        }
+
     }
 }

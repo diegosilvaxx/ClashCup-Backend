@@ -82,7 +82,8 @@ namespace DevIO.Api.Controllers.V1
                     HorarioAbertura = item.Torneio.HorarioAbertura,
                     HorarioInicio = item.Torneio.HorarioInicio,
                     Senha = item.Torneio.Senha,
-                    ValorTorneio = item.Torneio.ValorTorneio
+                    ValorTorneio = item.Torneio.ValorTorneio,
+                    Tag = item.Torneio.Tag
                 });
             }
 

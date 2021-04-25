@@ -43,13 +43,13 @@ namespace DevIO.Api.Controllers
         public async Task<ActionResult<IEnumerable<TorneioDto>>> ObterTodos()
         {
             var result = await _torneioRepository.ObterTodos();
-            List<TorneioDto> torneio = new List<TorneioDto>();
+            List<TorneioDtoNew> torneio = new List<TorneioDtoNew>();
 
             foreach (var item in result)
             {
-                torneio.Add(new TorneioDto
+                torneio.Add(new TorneioDtoNew
                 {
-                    DataTorneio = item.DataTorneio.ToString(),
+                    DataTorneio = item.DataTorneio,
                     Descricao = item.Descricao,
                     Excluido = item.Excluido,
                     HorarioAbertura = item.HorarioAbertura,
@@ -82,7 +82,8 @@ namespace DevIO.Api.Controllers
                     HorarioInicio = torneioDto.HorarioInicio,
                     NomeTorneio = torneioDto.NomeTorneio,
                     Senha = torneioDto.Senha,
-                    ValorTorneio = torneioDto.ValorTorneio
+                    ValorTorneio = torneioDto.ValorTorneio,
+                    Descricao = torneioDto.Descricao,
                 };
 
                 await _torneioRepository.Adicionar(torneio);

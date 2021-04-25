@@ -58,5 +58,43 @@ namespace DevIO.Api.Controllers
             }
 
         }
+
+        [HttpGet("RankingById/{id}")]
+        public async Task<ActionResult<ClashRoyaleRankingDto>> GetRankingById(string id)
+        {
+            try
+            {
+                var torneio = await _rankingService.GetRankingById(id);
+
+                if (torneio == null) return NotFound();
+
+                return CustomResponse(torneio);
+            }
+            catch (Exception err)
+            {
+                NotificarErro("Ranking não encontrado.");
+                return CustomResponse();
+            }
+
+        }
+
+        [HttpPut("UpdateRanking/{id}")]
+        public async Task<ActionResult<ClashRoyaleRankingDto>> UpdateRanking(string id)
+        {
+            try
+            {
+                var torneio = await _rankingService.UpdateRanking(id);
+
+                if (torneio == null) return NotFound();
+
+                return CustomResponse(torneio);
+            }
+            catch (Exception err)
+            {
+                NotificarErro("Falha ao atualizar ranking.");
+                return CustomResponse();
+            }
+
+        }
     }
 }

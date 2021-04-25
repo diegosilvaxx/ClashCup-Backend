@@ -11,5 +11,7 @@ namespace DevIO.Business.Intefaces
     {
         Task<List<RankingModelDto>> Filter();
         Task<ClashRoyaleDto> GetPlayer(string idClash);
+        Task<ClashRoyaleRankingDto> GetRankingById(string idClash);
+        Task<List<RankingModelDto>> UpdateRanking(string tag);
     }
 }

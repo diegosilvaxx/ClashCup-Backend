@@ -13,5 +13,6 @@ namespace DevIO.Api.DTO
         public string HorarioAbertura { get; set; }
         public string HorarioInicio { get; set; }
         public string ValorTorneio { get; set; }
+        public string Tag { get; set; }
     }
 }
