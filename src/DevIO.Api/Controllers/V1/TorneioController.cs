@@ -22,6 +22,7 @@ namespace DevIO.Api.Controllers
     public class TorneioController : MainController
     {
         private readonly ITorneioRepository _torneioRepository;
+        private readonly IPagamentoRepository _pagamentoRepository;
         private readonly ITorneioService _torneioService;
         private readonly IMapper _mapper;
 
@@ -30,19 +31,38 @@ namespace DevIO.Api.Controllers
                                  IMapper mapper,
                                  ITorneioRepository torneioRepository,
                                  ITorneioService torneioService,
-                                 IUser user) : base(notificador, user)
+                                 IUser user, IPagamentoRepository pagamentoRepository) : base(notificador, user)
         {
             _mapper = mapper;
             _torneioRepository = torneioRepository;
             _torneioService = torneioService;
+            _pagamentoRepository = pagamentoRepository;
         }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TorneioDto>>> ObterTodos()
         {
             var result = await _torneioRepository.ObterTodos();
+            List<TorneioDto> torneio = new List<TorneioDto>();
 
-            return CustomResponse(result.OrderBy(x => x.DataTorneio));
+            foreach (var item in result)
+            {
+                torneio.Add(new TorneioDto
+                {
+                    DataTorneio = item.DataTorneio.ToString(),
+                    Descricao = item.Descricao,
+                    Excluido = item.Excluido,
+                    HorarioAbertura = item.HorarioAbertura,
+                    HorarioInicio = item.HorarioInicio,
+                    NomeTorneio = item.NomeTorneio,
+                    Senha = item.Senha,
+                    ValorTorneio = item.ValorTorneio,
+                    Id = item.Id,
+                    NumeroJogadores = await _pagamentoRepository.JogadoresParticipante(item.Id)
+                });
+            }
+
+            return CustomResponse(torneio.OrderBy(x => x.DataTorneio));
         }
 
 

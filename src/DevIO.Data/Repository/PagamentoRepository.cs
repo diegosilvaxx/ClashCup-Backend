@@ -21,5 +21,10 @@ namespace DevIO.Data.Repository
             return pagamento;
         }
 
+        public async Task<int> JogadoresParticipante(Guid torneioId)
+        {
+            return await Db.Pagamentos.Include(x => x.Torneio).Include(x => x.Jogador).CountAsync(x => x.TorneioId == torneioId);
+
+        }
     }
 }

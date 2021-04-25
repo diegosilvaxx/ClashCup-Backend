@@ -13,6 +13,5 @@ namespace DevIO.Api.DTO
         public string Nome { get; set; }
         public int IdClash { get; set; }
         public int Vitoria { get; set; }
-        public Guid JogadorId { get; set; }
     }
 }

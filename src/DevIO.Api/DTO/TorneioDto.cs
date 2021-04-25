@@ -18,5 +18,6 @@ namespace DevIO.Api.DTO
         public string DataTorneio { get; set; }
         public string Descricao { get; set; }
         public bool Excluido { get; set; }
+        public int NumeroJogadores { get; set; }
     }
 }

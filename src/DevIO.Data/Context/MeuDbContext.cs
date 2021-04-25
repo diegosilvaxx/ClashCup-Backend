@@ -17,22 +17,6 @@ namespace DevIO.Data.Context
 
         public DbSet<Ranking> Rankings { get; set; }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    if (!optionsBuilder.IsConfigured)
-        //    {
-        //        //MY SQL
-        //        var host = "us-cdbr-east-03.cleardb.com";
-        //        var port = "3306";
-        //        var password = "a7462233";
-        //        var database = "heroku_3a00212b36402c7";
-
-        //        optionsBuilder.UseMySql($"server={host};userid=root;pwd={password};"
-        //                + $"port={port};database={database}");
-        //        optionsBuilder.EnableSensitiveDataLogging(true);
-        //        optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
-        //    }
-        //}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

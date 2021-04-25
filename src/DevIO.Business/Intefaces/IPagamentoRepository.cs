@@ -8,5 +8,6 @@ namespace DevIO.Business.Intefaces
     public interface IPagamentoRepository : IRepository<Pagamento>
     {
         Task<List<Pagamento>> GetAllPassport();
+        Task<int> JogadoresParticipante(Guid idTorneio);
     }
 }
