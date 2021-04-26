@@ -44,12 +44,10 @@ namespace DevIO.Api.Controllers.V1
             return CustomResponse(result);
         }
 
-        [HttpGet("{id:guid}")]
-        public async Task<ActionResult<IEnumerable<PagamentoDto>>> ObterPorId(Guid id)
+        [HttpGet("{id:guid}/{jogadorId:guid}")]
+        public async Task<ActionResult<IEnumerable<PagamentoDto>>> ObterPorId(Guid id, Guid jogadorId)
         {
-            var pagamento = await _pagamentoRepository.Buscar(x => x.TorneioId == id);
-
-            
+            var pagamento = await _pagamentoRepository.Buscar(x => x.TorneioId == id && x.JogadorId == jogadorId);
 
             if (!pagamento.Any()) return CustomResponse(Ok()); 
 

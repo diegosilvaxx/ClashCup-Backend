@@ -37,7 +37,7 @@ namespace DevIO.Api.Controllers
 
             if (torneio == null) return NotFound();
 
-            return CustomResponse(torneio);
+            return CustomResponse(torneio.OrderByDescending(x => x.Vitoria));
         }
 
         [HttpGet("Perfil/{id}")]
