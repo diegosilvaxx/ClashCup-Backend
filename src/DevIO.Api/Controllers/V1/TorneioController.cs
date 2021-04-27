@@ -45,7 +45,7 @@ namespace DevIO.Api.Controllers
             var result = await _torneioRepository.ObterTodos();
             List<TorneioDtoNew> torneio = new List<TorneioDtoNew>();
 
-            foreach (var item in result)
+            foreach (var item in result.Where(x => x.Excluido == false))
             {
                 torneio.Add(new TorneioDtoNew
                 {
